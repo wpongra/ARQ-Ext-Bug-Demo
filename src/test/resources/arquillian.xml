@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://jboss.org/schema/arquillian"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://jboss.org/schema/arquillian http://jboss.org/schema/arquillian/arquillian_1_0.xsd">
+	
+	<defaultProtocol type="Servlet 3.0" />
+
+    <container qualifier="wildfly-remote" default="true">
+        <configuration>
+            <property name="managementAddress">${arquillian.wildfly.managementAddress}</property>
+            <property name="managementPort">${arquillian.wildfly.managementPort}</property>
+            <property name="username">${arquillian.wildfly.username}</property>
+            <property name="password">${arquillian.wildfly.password}</property>
+        </configuration>
+        <protocol type="Servlet 3.0">
+            <property name="host">${arquillian.wildfly.servletAddress}</property>
+            <property name="port">${arquillian.wildfly.servletPort}</property>
+        </protocol>
+    </container>
+
+</arquillian>
